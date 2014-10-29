@@ -1,4 +1,4 @@
-"""Create a deck of cards"""
+"""Create a standard 52 card deck"""
 
 
 class Card(object):
@@ -16,11 +16,14 @@ class Card(object):
 class Deck(object):
     def __init__(self):
         self.deck = []
+        self.make_deck()
 
     def add(self, card):
+        """Add a card to the deck"""
         self.deck.append(card)
 
     def make_deck(self):
+        """Create a deck of 52 cards"""
         ranks = range(2, 11) + ['J', 'Q', 'K', 'A']
         suits = ['hearts', 'diamonds', 'spades', 'clubs']
         for rank in ranks:
