@@ -1,4 +1,5 @@
 """Create a standard 52 card deck"""
+import random
 
 
 class Card(object):
@@ -35,3 +36,6 @@ class Deck(object):
         """Pop off last card in deck, return the value"""
         last_card = self.deck.pop()
         return last_card
+
+    def shuffle(self):
+        random.shuffle(self.deck)
