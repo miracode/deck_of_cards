@@ -14,3 +14,9 @@ class Deck(object):
     def add(self, card):
         self.deck.append(card)
 
+    def make_deck(self):
+        ranks = range(2, 11) + ['J', 'Q', 'K', 'A']
+        suits = ['hearts', 'diamonds', 'spades', 'clubs']
+        for rank in ranks:
+                for suit in suits:
+                    self.add(Card(rank, suit))
