@@ -5,13 +5,13 @@ from deck_of_cards import Deck
 
 class TestDeck(unittest.TestCase):
     def test_make_card(self):
-        expected = ('9', 'diamonds')
+        expected = (9, 'diamonds')
         card = Card(*expected)
         actual = (card.rank, card.suit)
         self.assertEquals(expected, actual)
 
     def test_add_card_to_deck(self):
-        card = Card('10', 'hearts')
+        card = Card(10, 'hearts')
         deck = Deck()
         deck.add(card)
         actual = deck.deck
@@ -19,8 +19,6 @@ class TestDeck(unittest.TestCase):
         self.assertEquals(expected, actual)
 
     def test_make_standard_deck(self):
-        ranks = range(2, 11) + ['J', 'Q', 'K', 'A']
-        suits = ['hearts', 'diamonds', 'spades', 'clubs']
         deck = Deck()
         deck.make_deck()
         actual = []
@@ -79,3 +77,9 @@ class TestDeck(unittest.TestCase):
                     ('A', 'spades'),
                     ('A', 'clubs')]
         self.assertEquals(actual, expected)
+
+    def test_bad_rank(self):
+        with self.assertRaises(ValueError) as context:
+            Card(12, 'hearts')
+        self.assertEqual(context.exception.message, "Card rank must be from \
+2-10 or 'J', 'Q', 'K', 'A'")

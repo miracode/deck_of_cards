@@ -3,6 +3,9 @@
 
 class Card(object):
     def __init__(self, rank, suit):
+        if rank not in range(2, 11) + ['J', 'Q', 'K', 'A']:
+            raise ValueError("Card rank must be from 2-10 or \
+'J', 'Q', 'K', 'A'")
         self.rank = rank
         self.suit = suit
 
