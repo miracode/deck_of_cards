@@ -19,7 +19,7 @@ class Deck(object):
         self.make_deck()
 
     def add(self, card):
-        """Add a card to the deck"""
+        """Add a card to the end deck"""
         self.deck.append(card)
 
     def make_deck(self):
@@ -30,3 +30,8 @@ class Deck(object):
         for rank in ranks:
                 for suit in suits:
                     self.add(Card(rank, suit))
+
+    def pop(self):
+        """Pop off last card in deck, return the value"""
+        last_card = self.deck.pop()
+        return last_card

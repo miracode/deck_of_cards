@@ -149,3 +149,9 @@ class TestDeck(unittest.TestCase):
                     ('A', 'spades'),
                     ('A', 'clubs')]
         self.assertEquals(actual, expected)
+
+    def test_pop(self):
+        deck = Deck()
+        last_val = deck.pop()
+        assert len(deck.deck) == 51
+        self.assertEquals((last_val.rank, last_val.suit), ('A', 'clubs'))
