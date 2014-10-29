@@ -83,3 +83,9 @@ class TestDeck(unittest.TestCase):
             Card(12, 'hearts')
         self.assertEqual(context.exception.message, "Card rank must be from \
 2-10 or 'J', 'Q', 'K', 'A'")
+
+    def test_bad_suit(self):
+        with self.assertRaises(ValueError) as context:
+            Card(2, 'HeArtZ')
+        self.assertEqual(context.exception.message, "Card suit must be \
+'hearts', 'diamonds', 'spades', or clubs'")

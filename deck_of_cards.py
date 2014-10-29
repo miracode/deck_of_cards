@@ -6,6 +6,9 @@ class Card(object):
         if rank not in range(2, 11) + ['J', 'Q', 'K', 'A']:
             raise ValueError("Card rank must be from 2-10 or \
 'J', 'Q', 'K', 'A'")
+        if suit not in ['hearts', 'diamonds', 'spades', 'clubs']:
+            raise ValueError("Card suit must be 'hearts', 'diamonds', \
+'spades', or clubs'")
         self.rank = rank
         self.suit = suit
 
