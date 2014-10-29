@@ -7,7 +7,10 @@ class Card(object):
         self.suit = suit
 
 
-class DeckOfCards(object):
+class Deck(object):
     def __init__(self):
         self.deck = []
+
+    def add(self, card):
+        self.deck.append(card)
 
