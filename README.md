@@ -1,4 +1,4 @@
-deck_of_cards
+Deck of Cards
 =============
 
 ###Create a standard 52 card deck with Python.
